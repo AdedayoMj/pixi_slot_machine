@@ -79,19 +79,18 @@ export class Machine extends PIXI.Container {
     }, 2000);
   }
 
-  private analyseResult(): void {
+  public analyseResult(): void {
     for (const line of Paylines.lines) {
       let win = 0;
-      let lineIndex = [];
+      let lineIndex;
 
       for (let i = 0; i < line.length - 1; i++) {
         const a = this.reels[i].tiles[line[i]].id;
         const b = this.reels[i + 1].tiles[line[i + 1]].id;
 
         if (a === b) {
-          lineIndex.push(line[i]);
+          lineIndex = i;
           win++;
-          continue;
         } else {
           break;
         }
@@ -99,22 +98,12 @@ export class Machine extends PIXI.Container {
 
       const firstTile = this.reels[0].tiles[line[0]].id;
       const value = data.symbols[firstTile].paytable[win];
-      console.log(lineIndex);
-      this.createLine("Line1", window.innerHeight * 0.6, window.innerHeight);
-      // const lines = data.lineData[0].lines[0];
-      //   const x = data.lineData;
 
       if (value > 0) {
-        // TODO: player won something
-        // if (lines === "Line1") {
-        //   this.createLine(lines, window.innerHeight * 0.6, window.innerHeight);
-        // } else if (lines === "Line1") {
-        //   this.createLine(lines, window.innerHeight * 0.2, window.innerHeight);
-        // } else if (lines === "Line3") {
-        //   this.createLine(lines, window.innerHeight, window.innerHeight);
-        // } else if (lines === "Line4") {
-        //   this.createLine(lines, 0, window.innerHeight * 2);
-        // }
+        const lines = data.lineData[0].lines[lineIndex];
+        const yData = data.lineData[0].y[lineIndex];
+        const hData = data.lineData[0].height[lineIndex];
+        this.createLine(lines, yData, hData);
 
         alert(`you won ${value}`);
       }
