@@ -4,8 +4,9 @@
     "description": "Slot Machine Game",
     "main": "dist/index.js",
     "scripts": {
+        "start": "webpack-dev-server --open webpack.config.js ",
         "dev": "webpack-dev-server -d --inline --hot --progress --no-info --port 8081 --host 0.0.0.0",
-        "build": "webpack -p"
+        "build": "webpack --config webpack.config.js"
     },
     "author": "Adedayo Adegboye",
     "license": "MIT",
