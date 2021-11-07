@@ -4,10 +4,10 @@
     "description": "Slot Machine Game",
     "main": "dist/index.js",
     "scripts": {
-        "heroku-prebuild": "yarn install --production=false",
-        "start": "webpack-dev-server --open webpack.config.js ",
-        "dev": "webpack-dev-server -d --inline --hot --progress --no-info --port 8081 --host 0.0.0.0",
-        "build": "webpack --config webpack.config.js"
+        "start": "webpack-dev-server --open --config webpack.config.js",
+        "build": "webpack -p",
+        "heroku-prebuild": "yarn install --dev",
+        "dev": "webpack-dev-server -d --inline --hot --progress --no-info --port 8081 --host 0.0.0.0"
     },
     "author": "Adedayo Adegboye",
     "license": "MIT",
@@ -24,6 +24,7 @@
         "webpack-dev-server": "^2.9.1"
     },
     "dependencies": {
-        "pixi.js": "^4.5.6"
+        "pixi.js": "^4.5.6",
+        "webpack-merge": "^5.8.0"
     }
 }
