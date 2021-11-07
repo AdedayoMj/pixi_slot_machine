@@ -1,7 +1,7 @@
 # SLOT-MACHINE
 A slot machine game coded in Typescript using PIXI.js.
 
-![ScreenShot](https://github.com/AdedayoMj/pixi_slot_machine.git/master/screenshoot.png)
+![screenshoot](https://user-images.githubusercontent.com/53113836/140656021-b51c8b8e-3c52-4793-8b9c-2076e95cbfaf.png)
 
 ## Setup
 
