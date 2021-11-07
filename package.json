@@ -6,7 +6,6 @@
     "scripts": {
         "start": "webpack-dev-server --open --config webpack.config.js",
         "build": "webpack -p",
-        "heroku-prebuild": "yarn install --dev",
         "dev": "webpack-dev-server -d --inline --hot --progress --no-info --port 8081 --host 0.0.0.0"
     },
     "author": "Adedayo Adegboye",

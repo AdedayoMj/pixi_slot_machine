@@ -120,12 +120,12 @@ export class GameScene extends Scene {
     );
     this.addChild(this.LabelBet);
 
-    // adds win value text
-    this.winText = new PIXI.Text("", this.TEXT_STYLE);
-    this.winText.anchor.set(0.5, 0.5);
-    this.winText.position.set(704, window.innerHeight * 2.5);
-    this.addChild(this.winText);
-    this.win = 0;
+    // // adds win value text
+    // this.winText = new PIXI.Text("", this.TEXT_STYLE);
+    // this.winText.anchor.set(0.5, 0.5);
+    // this.winText.position.set(704, window.innerHeight * 2.5);
+    // this.addChild(this.winText);
+    // this.win = 0;
 
     // adds bet value text
     this.betText = new PIXI.Text("", this.TEXT_STYLE);
